@@ -1,4 +1,4 @@
-# archive-ph
+# pretube
 
 [view this software's license first, then you can use it](https://raw.githubusercontent.com/starlite-jack/pretube/main/LICENSE)
 
