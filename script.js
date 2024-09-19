@@ -4,15 +4,15 @@ function button1() {
     for (var i = 0; i < links.length; i++) {
         var trimmedLink = links[i].trim();
         if (trimmedLink) {
-            if (!trimmedLink.match(/(https?:\/\/)/)) {
-                trimmedLink = 'https://preservetube.com/save?url=' + encodeURIComponent(trimmedLink);
-            } else {
-                trimmedLink = 'https://preservetube.com/save?url=' + encodeURIComponent(trimmedLink);
+            if (!trimmedLink.match(/^(https?:\/\/)/)) {
+                trimmedLink = 'https://' + trimmedLink; 
             }
+
+            var finalLink = 'https://preservetube.com/save?url=' + encodeURIComponent(trimmedLink);
             try {
-                window.open(trimmedLink, '_blank');
+                window.open(finalLink, '_blank');
             } catch (error) {
-                alert('Failed to open link: ', trimmedLink, error);
+                alert('Failed to open link: ' + finalLink + '\nError: ' + error.message);
             }
         }
     }
